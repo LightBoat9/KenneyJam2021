@@ -5,8 +5,8 @@ extends Node2D
 # var a = 2
 # var b = "text"
 var rotate_to = 0
-var increment = 0
 var rotate_pos = 0
+var rotation_time = 0.7
 
 
 # Called when the node enters the scene tree for the first time.
@@ -22,12 +22,12 @@ func _process(delta):
 		if Input.is_action_just_pressed('rotate_left'):
 			rotate_pos -= 1
 			rotate_to = (PI / 2) * rotate_pos
-			tween.interpolate_property(self, "rotation", rotation, rotate_to, 1)
+			tween.interpolate_property(self, "rotation", rotation, rotate_to, rotation_time)
 			tween.start()
 		elif Input.is_action_just_pressed('rotate_right'):
 			rotate_pos += 1
 			rotate_to = (PI / 2) * rotate_pos 
-			tween.interpolate_property(self, "rotation", rotation, rotate_to, 1)
+			tween.interpolate_property(self, "rotation", rotation, rotate_to, rotation_time)
 			tween.start()
 
 
