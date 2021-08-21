@@ -6,6 +6,7 @@ var move_speed: float = 104.0
 var jump_speed: float = 252.0
 
 var velocity: Vector2 = Vector2()
+var snap: Vector2 = Vector2(0, 14)
 
 onready var sprite: Sprite = $Sprite
 onready var camera: Camera2D = $Camera2D
@@ -19,25 +20,19 @@ func _physics_process(delta: float) -> void:
 	
 	velocity.x = hinput * move_speed
 	
-	velocity += Vector2(0, GRAVITY)
+	if not is_on_floor():
+		velocity += Vector2(0, GRAVITY)
 	
 	if Input.is_action_just_pressed('ui_select') and is_on_floor():
 		velocity.y = -jump_speed
+		snap = Vector2()
 		
 	if velocity.y < -jump_speed / 2.0 and not Input.is_action_pressed('ui_select'):
 		velocity.y = -jump_speed / 2.0
-		
-	if not is_on_floor():
-		animation.stop()
-		sprite.frame = 1
-	elif velocity.x != 0 and is_on_floor():
-		animation.play("walk")
-	else:
-		animation.stop()
-		sprite.frame = 0
 	
 	var was_on_floor = is_on_floor()
-	move_and_slide(velocity, Vector2.UP)
+	move_and_slide_with_snap(velocity, snap, Vector2.UP, true)
+	snap = Vector2(0, 12)
 	
 	camera.align()
 	
@@ -51,5 +46,14 @@ func _physics_process(delta: float) -> void:
 				animation.seek(0.2)
 				
 		
-		if collision.normal == Vector2.UP or collision.normal == Vector2.DOWN:
+		if is_on_floor():
 			velocity.y = 0
+		
+	if not is_on_floor():
+		animation.stop()
+		sprite.frame = 1
+	elif velocity.x != 0 and is_on_floor():
+		animation.play("walk")
+	else:
+		animation.stop()
+		sprite.frame = 0
