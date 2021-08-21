@@ -45,8 +45,7 @@ func _physics_process(delta: float) -> void:
 				animation.play("walk")
 				animation.seek(0.2)
 				
-		
-		if is_on_floor():
+		if is_on_floor() or is_on_ceiling():
 			velocity.y = 0
 		
 	if not is_on_floor():
