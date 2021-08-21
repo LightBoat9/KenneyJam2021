@@ -4,7 +4,7 @@
 [ext_resource path="res://characters/player/player.gd" type="Script" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 8, 8 )
+extents = Vector2( 6, 6 )
 
 [sub_resource type="Animation" id=2]
 resource_name = "walk"
@@ -24,6 +24,8 @@ tracks/0/keys = {
 }
 
 [node name="Player" type="KinematicBody2D"]
+z_index = 1
+collision_layer = 2
 script = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]
@@ -31,7 +33,7 @@ texture = ExtResource( 1 )
 hframes = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 0, 4 )
+position = Vector2( 0, 6 )
 shape = SubResource( 1 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
