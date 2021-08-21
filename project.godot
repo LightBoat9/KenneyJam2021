@@ -18,6 +18,10 @@ config/icon="res://icon.png"
 
 Options="*res://singletons/options.gd"
 
+[global]
+
+scene=false
+
 [importer_defaults]
 
 texture={

@@ -2,7 +2,7 @@ extends Area2D
 
 onready var sprite: Sprite = $Sprite
 onready var audio_click: AudioStreamPlayer = $AudioClick
-export(String, MULTILINE) var next_scene: String = 'res://scenes/level_base/LevelBase.tscn'
+export(String, MULTILINE) var next_scene: String = 'res://scenes/level_base/LevelBase.tscn:Map'
 
 
 func _on_body_entered(body: Node) -> void:
