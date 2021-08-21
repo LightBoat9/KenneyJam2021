@@ -4,9 +4,9 @@ extends Node2D
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
-var rotate_to = 0
-var rotate_pos = 0
-var rotation_time = 0.7
+var rotate_to: float = 0
+var rotate_pos: float = 0
+var rotation_time: float = 0.7
 
 
 # Called when the node enters the scene tree for the first time.

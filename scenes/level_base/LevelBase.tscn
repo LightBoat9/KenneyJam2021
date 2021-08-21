@@ -8,11 +8,6 @@
 
 [node name="LevelBase" type="Node2D"]
 
-[node name="Free Form Characters" type="Node2D" parent="."]
-
-[node name="Player" parent="Free Form Characters" instance=ExtResource( 3 )]
-position = Vector2( -63, 72 )
-
 [node name="Map" type="Node2D" parent="."]
 script = ExtResource( 5 )
 
@@ -43,3 +38,6 @@ tile_data = PoolIntArray( -262149, 0, 0, -262148, 0, 1, -262147, 0, 1, -262146, 
 position = Vector2( 45, 72 )
 z_index = 2
 next_scene = "res://scenes/levels/Level1.tscn"
+
+[node name="Player" parent="Map/Foreground" instance=ExtResource( 3 )]
+position = Vector2( -63, 72 )
