@@ -17,12 +17,17 @@ func _ready():
 func _process(delta):
 	if Input.is_action_just_released('rotate_left'):
 		rotate_to = (PI / 2) + rotation
-		increment = PI / 20
+		increment = PI / 30
 	elif Input.is_action_just_released('rotate_right'):
 		rotate_to = (PI / -2) + rotation
-		increment = PI / -20
+		increment = PI / -30
 
 
 func _physics_process(delta):
-	if(abs(rotation - rotate_to) > 0.1):
-		rotation += increment 
+	print_debug(rotation != rotate_to)
+
+	if(rotation != rotate_to):
+		if(abs(increment) >= abs(rotate_to - rotation)):
+			rotation = rotate_to
+		else:
+			rotation += increment
