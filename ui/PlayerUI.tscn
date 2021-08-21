@@ -1,0 +1,75 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://ui/hearts.png" type="Texture" id=1]
+[ext_resource path="res://ui/Heart.tscn" type="PackedScene" id=2]
+[ext_resource path="res://ui/Kenney Pixel.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://characters/player/health.gd" type="Script" id=4]
+
+[sub_resource type="StyleBoxEmpty" id=2]
+content_margin_left = 16.0
+content_margin_right = 16.0
+content_margin_top = 16.0
+content_margin_bottom = 16.0
+
+[sub_resource type="AtlasTexture" id=1]
+atlas = ExtResource( 1 )
+region = Rect2( 0, 0, 18, 18 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 32
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 3 )
+
+[node name="PlayerUI" type="CanvasLayer"]
+
+[node name="Control" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PC" type="PanelContainer" parent="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_styles/panel = SubResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Health" type="HBoxContainer" parent="Control/PC"]
+margin_left = 16.0
+margin_top = 16.0
+margin_right = 1008.0
+margin_bottom = 584.0
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Heart" parent="Control/PC/Health" instance=ExtResource( 2 )]
+margin_bottom = 568.0
+texture = SubResource( 1 )
+
+[node name="Heart2" parent="Control/PC/Health" instance=ExtResource( 2 )]
+margin_left = 22.0
+margin_right = 40.0
+margin_bottom = 568.0
+texture = SubResource( 1 )
+
+[node name="Heart3" parent="Control/PC/Health" instance=ExtResource( 2 )]
+margin_left = 44.0
+margin_right = 62.0
+margin_bottom = 568.0
+texture = SubResource( 1 )
+
+[node name="Label" type="Label" parent="Control/PC"]
+margin_left = 940.0
+margin_top = 16.0
+margin_right = 1008.0
+margin_bottom = 40.0
+size_flags_horizontal = 10
+size_flags_vertical = 0
+custom_fonts/font = SubResource( 3 )
+text = "Level 1"

@@ -12,6 +12,11 @@ onready var sprite: Sprite = $Sprite
 onready var camera: Camera2D = $Camera2D
 onready var animation: AnimationPlayer = $AnimationPlayer
 onready var audio_jump: AudioStreamPlayer = $AudioJump
+onready var health_ui: Control = $PlayerUI/Control/PC/Health
+onready var hurt_animation: AnimationPlayer = $HurtAnimation
+
+var health: int = 3 setget set_health
+var max_healh: int = 3
 
 func _process(delta: float) -> void:
 	camera.align()
@@ -61,3 +66,17 @@ func _physics_process(delta: float) -> void:
 	else:
 		animation.stop()
 		sprite.frame = 0
+	
+func set_health(hp: int) -> void:
+	health = hp
+	health_ui.health = health
+	if health <= 0:
+		get_tree().reload_current_scene()
+	
+func hurt() -> void:
+	self.health -= 1
+	hurt_animation.play("hurt")
+	
+func _on_HurtBox_body_entered(body: Node) -> void:
+	if not hurt_animation.is_playing():
+		hurt()
