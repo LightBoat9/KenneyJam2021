@@ -7,6 +7,8 @@
 position = Vector2( 234.935, 176.202 )
 script = ExtResource( 2 )
 
+[node name="Tween" type="Tween" parent="."]
+
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = ExtResource( 1 )
 cell_size = Vector2( 16, 16 )

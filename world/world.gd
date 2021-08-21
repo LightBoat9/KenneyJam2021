@@ -6,6 +6,7 @@ extends Node2D
 # var b = "text"
 var rotate_to = 0
 var increment = 0
+var rotate_pos = 0
 
 
 # Called when the node enters the scene tree for the first time.
@@ -15,19 +16,20 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if Input.is_action_just_released('rotate_left'):
-		rotate_to = (PI / 2) + rotation
-		increment = PI / 30
-	elif Input.is_action_just_released('rotate_right'):
-		rotate_to = (PI / -2) + rotation
-		increment = PI / -30
+	if is_equal_approx(rotation, rotate_to):
+		var tween = get_node("Tween")
+
+		if Input.is_action_just_pressed('rotate_left'):
+			rotate_pos -= 1
+			rotate_to = (PI / 2) * rotate_pos
+			tween.interpolate_property(self, "rotation", rotation, rotate_to, 1)
+			tween.start()
+		elif Input.is_action_just_pressed('rotate_right'):
+			rotate_pos += 1
+			rotate_to = (PI / 2) * rotate_pos 
+			tween.interpolate_property(self, "rotation", rotation, rotate_to, 1)
+			tween.start()
 
 
 func _physics_process(delta):
-	print_debug(rotation != rotate_to)
-
-	if(rotation != rotate_to):
-		if(abs(increment) >= abs(rotate_to - rotation)):
-			rotation = rotate_to
-		else:
-			rotation += increment
+	pass
