@@ -36,12 +36,20 @@ func _physics_process(delta: float) -> void:
 		animation.stop()
 		sprite.frame = 0
 	
+	var was_on_floor = is_on_floor()
 	move_and_slide(velocity, Vector2.UP)
 	
 	camera.align()
 	
 	for i in range(get_slide_count()):
 		var collision = get_slide_collision(i)
+		
+		if not was_on_floor and collision.normal == Vector2.UP:
+			sprite.frame = 0
+			if velocity.x != 0:
+				animation.play("walk")
+				animation.seek(0.2)
+				
 		
 		if collision.normal == Vector2.UP or collision.normal == Vector2.DOWN:
 			velocity.y = 0
