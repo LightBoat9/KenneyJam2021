@@ -23,6 +23,9 @@ func _process(delta: float) -> void:
 
 func _physics_process(delta: float) -> void:
 	var hinput = int(Input.is_action_pressed('ui_right')) - int(Input.is_action_pressed('ui_left'))
+
+	check_out_of_bounds()
+	global_rotation = 0
 	
 	if hinput:
 		sprite.flip_h = hinput == -1
@@ -80,3 +83,8 @@ func hurt() -> void:
 func _on_HurtBox_body_entered(body: Node) -> void:
 	if not hurt_animation.is_playing():
 		hurt()
+
+
+func check_out_of_bounds():
+	if abs(position.x) >= 783 || abs(position.y) >= 783:
+		get_tree().reload_current_scene()

@@ -6,7 +6,7 @@ extends Node2D
 # var b = "text"
 var rotate_to: float = 0
 var rotate_pos: float = 0
-var rotation_time: float = 0.7
+var rotation_time: float = 1.0
 
 
 # Called when the node enters the scene tree for the first time.
