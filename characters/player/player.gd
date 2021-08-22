@@ -14,18 +14,25 @@ onready var animation: AnimationPlayer = $AnimationPlayer
 onready var audio_jump: AudioStreamPlayer = $AudioJump
 onready var health_ui: Control = $PlayerUI/Control/PC/Health
 onready var hurt_animation: AnimationPlayer = $HurtAnimation
+onready var level_label: Label = $PlayerUI/Control/PC/Label
 
 var health: int = 3 setget set_health
 var max_healh: int = 3
+
+func _ready() -> void:
+	var root = get_tree().root
+	var index = Options.LEVELS.find(root.get_child(root.get_child_count() - 1).filename)
+	
+	level_label.text = 'Level ' + str(index+1)
 
 func _process(delta: float) -> void:
 	camera.align()
 
 func _physics_process(delta: float) -> void:
+	global_rotation = 0
 	var hinput = int(Input.is_action_pressed('ui_right')) - int(Input.is_action_pressed('ui_left'))
 
 	check_out_of_bounds()
-	global_rotation = 0
 	
 	if hinput:
 		sprite.flip_h = hinput == -1

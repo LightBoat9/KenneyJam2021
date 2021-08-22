@@ -1,5 +1,15 @@
 extends Node
 
+const LEVELS: Array = [
+	"res://scenes/levels/Level0.tscn",
+	"res://scenes/levels/Level1.tscn",
+	"res://scenes/levels/Level2.tscn",
+	"res://scenes/levels/Level3.tscn",
+	"res://scenes/levels/Level4.tscn",
+	"res://scenes/levels/Level0.tscn",
+	"res://scenes/levels/Level0.tscn",
+]
+
 
 const Resolutions = [
 	Vector2(1280, 720),

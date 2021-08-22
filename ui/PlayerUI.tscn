@@ -41,33 +41,33 @@ __meta__ = {
 [node name="Health" type="HBoxContainer" parent="Control/PC"]
 margin_left = 16.0
 margin_top = 16.0
-margin_right = 1008.0
-margin_bottom = 584.0
+margin_right = 1264.0
+margin_bottom = 704.0
 script = ExtResource( 4 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Heart" parent="Control/PC/Health" instance=ExtResource( 2 )]
-margin_bottom = 568.0
+margin_bottom = 688.0
 texture = SubResource( 1 )
 
 [node name="Heart2" parent="Control/PC/Health" instance=ExtResource( 2 )]
 margin_left = 22.0
 margin_right = 40.0
-margin_bottom = 568.0
+margin_bottom = 688.0
 texture = SubResource( 1 )
 
 [node name="Heart3" parent="Control/PC/Health" instance=ExtResource( 2 )]
 margin_left = 44.0
 margin_right = 62.0
-margin_bottom = 568.0
+margin_bottom = 688.0
 texture = SubResource( 1 )
 
 [node name="Label" type="Label" parent="Control/PC"]
-margin_left = 940.0
+margin_left = 1196.0
 margin_top = 16.0
-margin_right = 1008.0
+margin_right = 1264.0
 margin_bottom = 40.0
 size_flags_horizontal = 10
 size_flags_vertical = 0
