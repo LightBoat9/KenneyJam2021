@@ -14,7 +14,7 @@ content_margin_right = 16.0
 content_margin_top = 16.0
 content_margin_bottom = 16.0
 
-[sub_resource type="StyleBoxTexture" id=4]
+[sub_resource type="StyleBoxTexture" id=2]
 texture = ExtResource( 4 )
 region_rect = Rect2( 0, 0, 48, 48 )
 margin_left = 16.0
@@ -22,7 +22,7 @@ margin_right = 16.0
 margin_top = 16.0
 margin_bottom = 16.0
 
-[sub_resource type="StyleBoxTexture" id=5]
+[sub_resource type="StyleBoxTexture" id=3]
 texture = ExtResource( 5 )
 region_rect = Rect2( 0, 0, 48, 48 )
 margin_left = 16.0
@@ -30,7 +30,7 @@ margin_right = 16.0
 margin_top = 16.0
 margin_bottom = 16.0
 
-[sub_resource type="StyleBoxTexture" id=2]
+[sub_resource type="StyleBoxTexture" id=4]
 texture = ExtResource( 2 )
 region_rect = Rect2( 0, 0, 48, 48 )
 margin_left = 16.0
@@ -38,7 +38,7 @@ margin_right = 16.0
 margin_top = 16.0
 margin_bottom = 16.0
 
-[sub_resource type="DynamicFont" id=3]
+[sub_resource type="DynamicFont" id=5]
 font_data = ExtResource( 3 )
 
 [sub_resource type="DynamicFont" id=6]
@@ -71,14 +71,14 @@ __meta__ = {
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="PanelContainer"]
 margin_left = 16.0
-margin_top = 248.0
-margin_right = 1264.0
-margin_bottom = 472.0
+margin_top = 68.0
+margin_right = 624.0
+margin_bottom = 292.0
 size_flags_vertical = 6
 
 [node name="TextureRect" type="TextureRect" parent="PanelContainer/VBoxContainer2"]
-margin_left = 491.0
-margin_right = 756.0
+margin_left = 171.0
+margin_right = 436.0
 margin_bottom = 100.0
 rect_min_size = Vector2( 265, 100 )
 size_flags_horizontal = 4
@@ -87,9 +87,9 @@ expand = true
 stretch_mode = 6
 
 [node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/VBoxContainer2"]
-margin_left = 462.0
+margin_left = 142.0
 margin_top = 104.0
-margin_right = 786.0
+margin_right = 466.0
 margin_bottom = 224.0
 size_flags_horizontal = 6
 custom_constants/separation = 64
@@ -107,10 +107,10 @@ margin_right = 96.0
 margin_bottom = 44.0
 size_flags_horizontal = 3
 size_flags_vertical = 6
-custom_styles/hover = SubResource( 4 )
-custom_styles/pressed = SubResource( 5 )
-custom_styles/normal = SubResource( 2 )
-custom_fonts/font = SubResource( 3 )
+custom_styles/hover = SubResource( 2 )
+custom_styles/pressed = SubResource( 3 )
+custom_styles/normal = SubResource( 4 )
+custom_fonts/font = SubResource( 5 )
 text = "Play"
 
 [node name="Button2" type="Button" parent="PanelContainer/VBoxContainer2/HBoxContainer/VBoxContainer"]
@@ -119,10 +119,10 @@ margin_right = 96.0
 margin_bottom = 92.0
 size_flags_horizontal = 3
 size_flags_vertical = 6
-custom_styles/hover = SubResource( 4 )
-custom_styles/pressed = SubResource( 5 )
-custom_styles/normal = SubResource( 2 )
-custom_fonts/font = SubResource( 3 )
+custom_styles/hover = SubResource( 2 )
+custom_styles/pressed = SubResource( 3 )
+custom_styles/normal = SubResource( 4 )
+custom_fonts/font = SubResource( 5 )
 text = "Exit"
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="PanelContainer/VBoxContainer2/HBoxContainer"]
@@ -149,10 +149,10 @@ margin_right = 38.0
 margin_bottom = 44.0
 size_flags_horizontal = 3
 size_flags_vertical = 6
-custom_styles/hover = SubResource( 4 )
-custom_styles/pressed = SubResource( 5 )
-custom_styles/normal = SubResource( 2 )
-custom_fonts/font = SubResource( 3 )
+custom_styles/hover = SubResource( 2 )
+custom_styles/pressed = SubResource( 3 )
+custom_styles/normal = SubResource( 4 )
+custom_fonts/font = SubResource( 5 )
 text = "1"
 
 [node name="Button4" type="Button" parent="PanelContainer/VBoxContainer2/HBoxContainer/VBoxContainer2/GridContainer"]
@@ -161,10 +161,10 @@ margin_right = 80.0
 margin_bottom = 44.0
 size_flags_horizontal = 3
 size_flags_vertical = 6
-custom_styles/hover = SubResource( 4 )
-custom_styles/pressed = SubResource( 5 )
-custom_styles/normal = SubResource( 2 )
-custom_fonts/font = SubResource( 3 )
+custom_styles/hover = SubResource( 2 )
+custom_styles/pressed = SubResource( 3 )
+custom_styles/normal = SubResource( 4 )
+custom_fonts/font = SubResource( 5 )
 text = "2"
 
 [node name="Button5" type="Button" parent="PanelContainer/VBoxContainer2/HBoxContainer/VBoxContainer2/GridContainer"]
@@ -173,10 +173,10 @@ margin_right = 122.0
 margin_bottom = 44.0
 size_flags_horizontal = 3
 size_flags_vertical = 6
-custom_styles/hover = SubResource( 4 )
-custom_styles/pressed = SubResource( 5 )
-custom_styles/normal = SubResource( 2 )
-custom_fonts/font = SubResource( 3 )
+custom_styles/hover = SubResource( 2 )
+custom_styles/pressed = SubResource( 3 )
+custom_styles/normal = SubResource( 4 )
+custom_fonts/font = SubResource( 5 )
 text = "3"
 
 [node name="Button6" type="Button" parent="PanelContainer/VBoxContainer2/HBoxContainer/VBoxContainer2/GridContainer"]
@@ -185,10 +185,10 @@ margin_right = 164.0
 margin_bottom = 44.0
 size_flags_horizontal = 3
 size_flags_vertical = 6
-custom_styles/hover = SubResource( 4 )
-custom_styles/pressed = SubResource( 5 )
-custom_styles/normal = SubResource( 2 )
-custom_fonts/font = SubResource( 3 )
+custom_styles/hover = SubResource( 2 )
+custom_styles/pressed = SubResource( 3 )
+custom_styles/normal = SubResource( 4 )
+custom_fonts/font = SubResource( 5 )
 text = "4"
 
 [node name="Button7" type="Button" parent="PanelContainer/VBoxContainer2/HBoxContainer/VBoxContainer2/GridContainer"]
@@ -197,10 +197,10 @@ margin_right = 38.0
 margin_bottom = 92.0
 size_flags_horizontal = 3
 size_flags_vertical = 6
-custom_styles/hover = SubResource( 4 )
-custom_styles/pressed = SubResource( 5 )
-custom_styles/normal = SubResource( 2 )
-custom_fonts/font = SubResource( 3 )
+custom_styles/hover = SubResource( 2 )
+custom_styles/pressed = SubResource( 3 )
+custom_styles/normal = SubResource( 4 )
+custom_fonts/font = SubResource( 5 )
 text = "5"
 
 [node name="Button8" type="Button" parent="PanelContainer/VBoxContainer2/HBoxContainer/VBoxContainer2/GridContainer"]
@@ -210,10 +210,10 @@ margin_right = 80.0
 margin_bottom = 92.0
 size_flags_horizontal = 3
 size_flags_vertical = 6
-custom_styles/hover = SubResource( 4 )
-custom_styles/pressed = SubResource( 5 )
-custom_styles/normal = SubResource( 2 )
-custom_fonts/font = SubResource( 3 )
+custom_styles/hover = SubResource( 2 )
+custom_styles/pressed = SubResource( 3 )
+custom_styles/normal = SubResource( 4 )
+custom_fonts/font = SubResource( 5 )
 text = "6"
 
 [node name="Button9" type="Button" parent="PanelContainer/VBoxContainer2/HBoxContainer/VBoxContainer2/GridContainer"]
@@ -223,10 +223,10 @@ margin_right = 122.0
 margin_bottom = 92.0
 size_flags_horizontal = 3
 size_flags_vertical = 6
-custom_styles/hover = SubResource( 4 )
-custom_styles/pressed = SubResource( 5 )
-custom_styles/normal = SubResource( 2 )
-custom_fonts/font = SubResource( 3 )
+custom_styles/hover = SubResource( 2 )
+custom_styles/pressed = SubResource( 3 )
+custom_styles/normal = SubResource( 4 )
+custom_fonts/font = SubResource( 5 )
 text = "7"
 
 [node name="Button10" type="Button" parent="PanelContainer/VBoxContainer2/HBoxContainer/VBoxContainer2/GridContainer"]
@@ -236,10 +236,10 @@ margin_right = 164.0
 margin_bottom = 92.0
 size_flags_horizontal = 3
 size_flags_vertical = 6
-custom_styles/hover = SubResource( 4 )
-custom_styles/pressed = SubResource( 5 )
-custom_styles/normal = SubResource( 2 )
-custom_fonts/font = SubResource( 3 )
+custom_styles/hover = SubResource( 2 )
+custom_styles/pressed = SubResource( 3 )
+custom_styles/normal = SubResource( 4 )
+custom_fonts/font = SubResource( 5 )
 text = "8"
 
 [connection signal="pressed" from="PanelContainer/VBoxContainer2/HBoxContainer/VBoxContainer/Button" to="." method="_on_Button_pressed"]

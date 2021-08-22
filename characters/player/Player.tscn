@@ -5,7 +5,11 @@
 [ext_resource path="res://characters/player/jump.ogg" type="AudioStream" id=3]
 [ext_resource path="res://ui/PlayerUI.tscn" type="PackedScene" id=4]
 
+<<<<<<< HEAD
 [sub_resource type="RectangleShape2D" id=6]
+=======
+[sub_resource type="RectangleShape2D" id=1]
+>>>>>>> d402ea098f5c6a8250fba47fb46c93a6bcf76108
 extents = Vector2( 4, 8 )
 
 [sub_resource type="Animation" id=2]
@@ -25,7 +29,12 @@ tracks/0/keys = {
 "values": [ 1, 0 ]
 }
 
+<<<<<<< HEAD
 [sub_resource type="Animation" id=7]
+=======
+[sub_resource type="Animation" id=3]
+resource_name = "hurt"
+>>>>>>> d402ea098f5c6a8250fba47fb46c93a6bcf76108
 length = 2.0
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:modulate")
@@ -40,7 +49,7 @@ tracks/0/keys = {
 "values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0.2 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0.2 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0.2 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0.2 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0.2 ), Color( 1, 1, 1, 1 ) ]
 }
 
-[sub_resource type="RectangleShape2D" id=5]
+[sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 8, 8 )
 
 [node name="Player" type="KinematicBody2D"]
@@ -51,7 +60,11 @@ script = ExtResource( 2 )
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
 position = Vector2( 8, -8 )
+<<<<<<< HEAD
 shape = SubResource( 6 )
+=======
+shape = SubResource( 1 )
+>>>>>>> d402ea098f5c6a8250fba47fb46c93a6bcf76108
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2( -8, -8 )
@@ -75,7 +88,11 @@ hframes = 2
 [node name="PlayerUI" parent="." instance=ExtResource( 4 )]
 
 [node name="HurtAnimation" type="AnimationPlayer" parent="."]
+<<<<<<< HEAD
 anims/hurt = SubResource( 7 )
+=======
+anims/hurt = SubResource( 3 )
+>>>>>>> d402ea098f5c6a8250fba47fb46c93a6bcf76108
 
 [node name="HurtBox" type="Area2D" parent="."]
 visible = false
@@ -84,6 +101,6 @@ collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
 position = Vector2( 8, -8 )
-shape = SubResource( 5 )
+shape = SubResource( 4 )
 
 [connection signal="body_entered" from="HurtBox" to="." method="_on_HurtBox_body_entered"]
