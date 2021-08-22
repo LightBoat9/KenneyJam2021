@@ -5,11 +5,7 @@
 [ext_resource path="res://characters/player/jump.ogg" type="AudioStream" id=3]
 [ext_resource path="res://ui/PlayerUI.tscn" type="PackedScene" id=4]
 
-<<<<<<< HEAD
-[sub_resource type="RectangleShape2D" id=6]
-=======
 [sub_resource type="RectangleShape2D" id=1]
->>>>>>> d402ea098f5c6a8250fba47fb46c93a6bcf76108
 extents = Vector2( 4, 8 )
 
 [sub_resource type="Animation" id=2]
@@ -29,12 +25,7 @@ tracks/0/keys = {
 "values": [ 1, 0 ]
 }
 
-<<<<<<< HEAD
-[sub_resource type="Animation" id=7]
-=======
 [sub_resource type="Animation" id=3]
-resource_name = "hurt"
->>>>>>> d402ea098f5c6a8250fba47fb46c93a6bcf76108
 length = 2.0
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:modulate")
@@ -60,11 +51,7 @@ script = ExtResource( 2 )
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
 position = Vector2( 8, -8 )
-<<<<<<< HEAD
-shape = SubResource( 6 )
-=======
 shape = SubResource( 1 )
->>>>>>> d402ea098f5c6a8250fba47fb46c93a6bcf76108
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2( -8, -8 )
@@ -88,11 +75,7 @@ hframes = 2
 [node name="PlayerUI" parent="." instance=ExtResource( 4 )]
 
 [node name="HurtAnimation" type="AnimationPlayer" parent="."]
-<<<<<<< HEAD
-anims/hurt = SubResource( 7 )
-=======
 anims/hurt = SubResource( 3 )
->>>>>>> d402ea098f5c6a8250fba47fb46c93a6bcf76108
 
 [node name="HurtBox" type="Area2D" parent="."]
 visible = false
